@@ -1,5 +1,5 @@
 # My Personal Portfolio
 
-### Inital design
+### My inital design
 
-![Initial design image][./img/personal-portfolio-design.jpg?raw=true "Initial design"]
+![Initial design image](./img/personal-portfolio-design.jpg)
