@@ -1,0 +1,132 @@
+:root {
+  --background-colour: #30d5c8;
+  --snow-white: #fffafa;
+  --eletric-yellow: #fff600;
+  --zig-zags: #000000FF
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, var(--background-colour) 50%, rgba(0,212,255,1) 100%);
+}
+
+img, .zig-zags, .pointer-inner-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.zig-zags {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  transform: rotate(45deg);
+  z-index: -2;
+}
+
+.zig-zag {
+  height: 100%;
+  width: 1px;
+  background-color: var(--zig-zags);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 80%;
+  width: 80%;
+  display: flex;
+}
+
+.intro-image-container, .intro-text-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.intro-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-image-container, .small-image-container {
+}
+
+.big-image-container {
+  height: 60%;
+  width: 60%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.small-image-container {
+  height: 25%;
+  width: 25%;
+  position: absolute;
+}
+
+.small-image-container:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.small-image-container:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.small-image-container:nth-child(3) {
+  bottom: 0;
+  right: 50px;
+}
+
+.intro-text-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting, .my-name {
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.greeting {
+  color: var(--snow-white);
+}
+
+.my-name {
+  color: var(--eletric-yellow);
+}
+
+.pointer-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 75px;
+  width: 75px;
+}
+
+.pointer-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--snow-white);
+}
