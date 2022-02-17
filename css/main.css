@@ -1,7 +1,7 @@
 :root {
   --background-colour: #30d5c8;
   --snow-white: #fffafa;
-  --eletric-yellow: #fff600;
+  --eletric-yellow: #FFFF00;
   --zig-zags: #000000FF
 }
 
@@ -18,7 +18,20 @@ body {
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, var(--background-colour) 50%, rgba(0,212,255,1) 100%);
 }
 
-img, .zig-zags, .pointer-inner-container {
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 10px solid deepskyblue;
+}
+
+.zig-zags, .zig-zags-overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.pointer-inner-container {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -30,13 +43,24 @@ img, .zig-zags, .pointer-inner-container {
   display: flex;
   justify-content: space-around;
   transform: rotate(45deg);
-  z-index: -2;
+  z-index: -1;
 }
 
 .zig-zag {
   height: 100%;
   width: 1px;
   background-color: var(--zig-zags);
+}
+
+.zig-zags-overlay {
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  height: 120%;
+  width: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
 }
 
 #root {
@@ -69,11 +93,11 @@ img, .zig-zags, .pointer-inner-container {
 }
 
 .big-image-container {
-  height: 60%;
-  width: 60%;
+  height: 75%;
+  width: 75%;
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 12.5%;
+  left: 12.5%;
 }
 
 .small-image-container {
@@ -94,7 +118,12 @@ img, .zig-zags, .pointer-inner-container {
 
 .small-image-container:nth-child(3) {
   bottom: 0;
-  right: 50px;
+  right: 0;
+}
+
+.small-image-container:nth-child(4) {
+  bottom: 0;
+  left: 0;
 }
 
 .intro-text-inner-container {
@@ -112,8 +141,15 @@ img, .zig-zags, .pointer-inner-container {
   color: var(--snow-white);
 }
 
+.my-name-container {
+  background-color: rgba(240, 46, 170, 1);
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
 .my-name {
   color: var(--eletric-yellow);
+  animation: 2s infinite flash-name;
+  transition: opacity 0.1s;
 }
 
 .pointer-container {
@@ -130,3 +166,30 @@ img, .zig-zags, .pointer-inner-container {
   align-items: center;
   background-color: var(--snow-white);
 }
+
+.fa-arrow-right-long {
+  color: royalblue;
+  position: absolute;
+  animation: 1s infinite alternate move-point;
+}
+
+@keyframes flash-name {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-point {
+  0% {
+    left: 10px;
+  }
+
+  100% {
+    left: 30px;
+  }
+}
+
