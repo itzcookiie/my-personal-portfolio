@@ -2,7 +2,8 @@
   --background-colour: #30d5c8;
   --snow-white: #fffafa;
   --eletric-yellow: #FFFF00;
-  --zig-zags: #000000FF
+  --zig-zags: #000000FF;
+  --bill-board: rgba(240, 46, 170, 1);
 }
 
 * {
@@ -148,8 +149,9 @@ img {
 
 .my-name {
   color: var(--eletric-yellow);
-  animation: 2s infinite flash-name;
-  transition: opacity 0.1s;
+  animation: 1s infinite alternate flash-name;
+  transition: color 0.1s;
+  -webkit-text-stroke:  1px #000000;
 }
 
 .pointer-container {
@@ -175,11 +177,11 @@ img {
 
 @keyframes flash-name {
   0% {
-    opacity: 0;
+    color: var(--bill-board);
   }
 
   100% {
-    opacity: 1;
+    color: var(--eletric-yellow);
   }
 }
 
