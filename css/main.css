@@ -150,7 +150,6 @@ img {
 .my-name {
   color: var(--eletric-yellow);
   animation: 1s infinite alternate flash-name;
-  transition: color 0.1s;
   -webkit-text-stroke:  1px #000000;
 }
 
